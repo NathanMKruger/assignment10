@@ -1,0 +1,47 @@
+Nathan Kruger
+
+1. "Negate the wieght of [the] original graph and compute the minimum spanning tree on the negated
+graph will give the right answer. Here is why: For the same spanning tree in both graphs, the weighted
+sum of one graph is the negation of the other. So the minimum spanning tree of the negated graph 
+should give the maximum spanning tree of the original one," (Shen Yang).
+Source: https://stackoverflow.com/questions/4992664/how-to-find-maximum-spanning-tree
+
+2. In MST, you're finding the tree with minimum weight within a weighted graph while the TSP finds
+a path with the minimum weight within a weighted graph. Both while visiting every node of the graph
+at least once.
+
+3. 
++---------------+---------+---------+--------+---------------+-------------+
+|               | Seattle | Chicago | Denver | San Francisco | Los Angeles |
++---------------+---------+---------+--------+---------------+-------------+
+| Seattle       | 0       | 2097    | 1331   | 807           | NO EDGE     |
++---------------+---------+---------+--------+---------------+-------------+
+| Chicago       | 2097    | 0       | 1003   | NO EDGE       | NO EDGE     |
++---------------+---------+---------+--------+---------------+-------------+
+| Denver        | 1331    | 1003    | 0      | 1267          | 1015        |
++---------------+---------+---------+--------+---------------+-------------+
+| San Francisco | 807     | NO EDGE | 1267   | 0             | 381         |
++---------------+---------+---------+--------+---------------+-------------+
+| Los Angeles   | NO EDGE | NO EDGE | 1015   | 381           | 0           |
++---------------+---------+---------+--------+---------------+-------------+
+Table Source: https://www.tablesgenerator.com/text_tables
+
+4. The Big O runtime of Jarnik's algorithm is O(V^2) or O(E log V) with a priority queue where E is the 
+number of edges and V is the number of vertices. The difference is because of the priority queue
+allowing for a constant time lookup and storing of the next larges element.
+
+5. Jarnik's algorithm is greedy because it always chooses the locally optimal next option like Dijkstra's
+algorithm does as well.
+Source: Jarnik's Algorithm class slides
+
+6. Edmonds' Algorithm. Initially proposed by Yoeng-Jin Chu and Tseng-Hong Liu in 1965, and then two years
+later by Jack Edmonds. The algorithm is also known as the Chu-Liu/Edmonds' Algorithm, but just having
+Edmonds' name instead is the more common name. The algorithm finds a spanning arborescence or optimum
+branching of minumum weight in a tree. This was a case of Edmonds joining others in creating an graph and
+tree functions and theories which he has done before with Tibor Gallai and Alan Cobham and just shortening
+the name of the algorithm for convenience. Also since Edmonds seems like a large figure within the computer
+science field, the put his name as the shortened name for the algorithm instead of the other two. There is
+no reason that has been officially cited as the reason why this algorithm is just refered to as Edmonds'
+algorithm.
+Sources: https://en.wikipedia.org/wiki/Edmonds%27_algorithm
+https://en.wikipedia.org/wiki/Jack_Edmonds
