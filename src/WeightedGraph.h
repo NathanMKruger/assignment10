@@ -133,37 +133,37 @@ namespace csi281 {
             // this aligns with the inner function visit() from the pseudo code in the slides
             auto visit = [&](V v) {
                 // YOUR CODE HERE
-					visited.emplace(v) = true;
-					for (int i = 0; i < neighborsWithWeights(i); i++)
-					{
-						if (!visited.end(v))
-						{
-							frontier.push(i);
-						}
-					}
+		    visited.emplace(v) = true;
+		    for (int i = 0; i < neighborsWithWeights(i); i++)
+		    {
+			    if (!visited.end(v))
+			    {
+				    frontier.push(i);
+			    }
+		    }
             };
             
             // YOUR CODE HERE
-			visit(start);
+		visit(start);
 
-			if (start > visited.count() - 1  || start < 0)
-			{
-				return nullopt;
-			}
+		if (start > visited.count() - 1  || start < 0)
+		{
+			return nullopt;
+		}
 
-			visit(start);
+		visit(start);
 			
-			while (!frontier.empty())
+		while (!frontier.empty())
+		{
+			V current = frontier.top();
+			frontier.pop();
+			if (visited.find(current))
 			{
-				V current = frontier.top();
-				frontier.pop();
-				if (visited.find(current))
-				{
-					continue;
-				}
-				solution.insert(current);
-				visit(current);
+				continue;
 			}
+			solution.insert(current);
+			visit(current);
+		}
             
             return solution;
         }
